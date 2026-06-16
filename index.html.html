@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maletín Docente UNANDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2D6B;
+    --navy-dark: #111E4A;
+    --navy-light: #2A3F8F;
+    --gold: #D4A017;
+    --gold-light: #F0BC3A;
+    --emerald: #0B6E4F;
+    --emerald-light: #0E8A63;
+    --white: #FFFFFF;
+    --off-white: #F8F9FC;
+    --gray-100: #F1F3F8;
+    --gray-200: #E4E7F0;
+    --gray-300: #CBD1DF;
+    --gray-500: #6B7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --badge-free: #0B6E4F;
+    --badge-freemium: #9B5C00;
+    --badge-paid: #7C3AED;
+    --badge-institutional: #1B2D6B;
+    --level-basic: #0B6E4F;
+    --level-mid: #9B5C00;
+    --level-adv: #C0392B;
+    --shadow-sm: 0 1px 3px rgba(27,45,107,0.08), 0 1px 2px rgba(27,45,107,0.06);
+    --shadow-md: 0 4px 16px rgba(27,45,107,0.10), 0 2px 6px rgba(27,45,107,0.06);
+    --shadow-lg: 0 10px 40px rgba(27,45,107,0.14), 0 4px 12px rgba(27,45,107,0.08);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--off-white);
+    color: var(--gray-900);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+    color: white;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+  }
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    height: 68px;
+  }
+  .header-brand { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
+  .brand-icon {
+    width: 42px; height: 42px;
+    background: var(--gold);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .brand-text { line-height: 1.2; }
+  .brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.01em;
+  }
+  .brand-sub { font-size: 0.7rem; color: rgba(255,255,255,0.6); font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
+  .header-search {
+    flex: 1;
+    max-width: 440px;
+    position: relative;
+  }
+  .header-search input {
+    width: 100%;
+    padding: 0.55rem 1rem 0.55rem 2.8rem;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    outline: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .header-search input::placeholder { color: rgba(255,255,255,0.5); }
+  .header-search input:focus { background: rgba(255,255,255,0.16); border-color: var(--gold); }
+  .search-icon {
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    pointer-events: none;
+  }
+  .header-nav { display: flex; gap: 0.4rem; }
+  .header-nav a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .header-nav a:hover { color: white; background: rgba(255,255,255,0.1); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+    color: white;
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(ellipse, rgba(212,160,23,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -5%;
+    width: 40%;
+    height: 140%;
+    background: radial-gradient(ellipse, rgba(11,110,79,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(212,160,23,0.15);
+    border: 1px solid rgba(212,160,23,0.3);
+    border-radius: 50px;
+    padding: 0.3rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 span { color: var(--gold-light); }
+  .hero p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.78);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); font-weight: 500; margin-top: 0.2rem; }
+
+  /* ── CATEGORY FILTER BAR ── */
+  .filter-bar {
+    background: white;
+    border-bottom: 1.5px solid var(--gray-200);
+    position: sticky;
+    top: 68px;
+    z-index: 90;
+    box-shadow: var(--shadow-sm);
+  }
+  .filter-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 0.3rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .filter-inner::-webkit-scrollbar { display: none; }
+  .filter-btn {
+    padding: 0.8rem 1.1rem;
+    border: none;
+    background: transparent;
+    color: var(--gray-500);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2.5px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .filter-btn:hover { color: var(--navy); }
+  .filter-btn.active { color: var(--navy); border-bottom-color: var(--gold); font-weight: 600; }
+
+  /* ── MAIN LAYOUT ── */
+  .main-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 3.5rem; scroll-margin-top: 120px; }
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .section-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .section-icon.navy { background: #EEF1FA; }
+  .section-icon.gold { background: #FDF5E0; }
+  .section-icon.emerald { background: #E6F5EF; }
+  .section-icon.purple { background: #F3EFFE; }
+  .section-icon.rose { background: #FDE8E8; }
+  .section-icon.sky { background: #E0F4FF; }
+  .section-icon.amber { background: #FEF5E7; }
+  .section-icon.teal { background: #E0F5F3; }
+  .section-icon.red { background: #FBE9E8; }
+  .section-meta { flex: 1; }
+  .section-meta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+  .section-meta p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.5; }
+
+  /* ── TOOL CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  .cards-grid.featured { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+
+  /* ── TOOL CARD ── */
+  .tool-card {
+    background: white;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--gray-200);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    position: relative;
+  }
+  .tool-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gray-300);
+  }
+  .tool-card.institutional {
+    border-color: rgba(27,45,107,0.25);
+    background: linear-gradient(145deg, #FAFBFF 0%, white 100%);
+  }
+  .tool-card.institutional::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--navy), var(--gold));
+  }
+  .card-top {
+    padding: 1.3rem 1.3rem 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .tool-logo {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    background: var(--gray-100);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+  .tool-logo img { width: 100%; height: 100%; object-fit: contain; }
+  .tool-head { flex: 1; min-width: 0; }
+  .tool-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+  .tool-badges {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 0.67rem;
+    font-weight: 600;
+    padding: 0.18rem 0.55rem;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge.free { background: #E6F5EF; color: var(--badge-free); }
+  .badge.freemium { background: #FEF5E7; color: var(--badge-freemium); }
+  .badge.paid { background: #F3EFFE; color: var(--badge-paid); }
+  .badge.edu { background: #E6F5EF; color: var(--badge-free); }
+  .badge.institutional { background: #EEF1FA; color: var(--badge-institutional); }
+  .badge.level-basic { background: #E6F5EF; color: var(--level-basic); }
+  .badge.level-mid { background: #FEF5E7; color: var(--level-mid); }
+  .badge.level-adv { background: #FBE9E8; color: var(--level-adv); }
+  .card-body {
+    padding: 0 1.3rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .tool-desc {
+    font-size: 0.84rem;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .tool-functions {
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 0.9rem;
+  }
+  .tool-functions-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.45rem;
+  }
+  .tool-functions ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .tool-functions ul li {
+    font-size: 0.8rem;
+    color: var(--gray-700);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .tool-functions ul li::before {
+    content: '✓';
+    color: var(--emerald);
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+  .tool-rec {
+    font-size: 0.79rem;
+    color: var(--navy);
+    background: #EEF1FA;
+    border-left: 3px solid var(--navy);
+    padding: 0.55rem 0.8rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    line-height: 1.5;
+  }
+  .tool-rec strong { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; color: var(--navy-light); }
+  .card-footer {
+    padding: 0.9rem 1.3rem;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+  .tool-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--navy);
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .tool-link:hover { background: var(--navy-light); transform: scale(1.03); }
+  .tool-link.gold-btn { background: var(--gold); color: var(--navy-dark); }
+  .tool-link.gold-btn:hover { background: var(--gold-light); }
+  .official-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--emerald);
+    background: #E6F5EF;
+    padding: 0.3rem 0.65rem;
+    border-radius: 50px;
+  }
+
+  /* ── SPECIAL: INSTITUTIONAL HERO CARD ── */
+  .institutional-card {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 70%, var(--navy-light) 100%);
+    border-radius: var(--radius);
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+  }
+  .institutional-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 50%;
+    height: 180%;
+    background: radial-gradient(ellipse, rgba(212,160,23,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .inst-inner { position: relative; display: flex; gap: 2rem; align-items: center; }
+  .inst-icon {
+    width: 72px; height: 72px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(212,160,23,0.4);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  .inst-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .inst-text p { font-size: 0.9rem; color: rgba(255,255,255,0.78); margin-bottom: 1rem; line-height: 1.6; }
+  .inst-functions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .inst-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 0.77rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+  .inst-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gold);
+    color: var(--navy-dark);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    transition: background 0.2s;
+  }
+  .inst-link:hover { background: var(--gold-light); }
+
+  /* ── AI ETHICS NOTE ── */
+  .ethics-note {
+    background: linear-gradient(135deg, #FDF5E0 0%, #FEF9EC 100%);
+    border: 1.5px solid rgba(212,160,23,0.3);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+  }
+  .ethics-icon { font-size: 1.6rem; flex-shrink: 0; }
+  .ethics-content h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.4rem;
+  }
+  .ethics-content p { font-size: 0.84rem; color: var(--gray-700); line-height: 1.65; }
+
+  /* ── RECOMMENDATIONS SECTION ── */
+  .recs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .rec-card {
+    background: white;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+  }
+  .rec-card:hover { box-shadow: var(--shadow-md); }
+  .rec-num {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    color: white;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .rec-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.3rem; }
+  .rec-text p { font-size: 0.82rem; color: var(--gray-500); line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.82rem;
+    margin-top: 3rem;
+  }
+  .site-footer strong { color: var(--gold-light); }
+
+  /* ── SEARCH HIGHLIGHT ── */
+  .tool-card.hidden { display: none; }
+  mark { background: rgba(212,160,23,0.3); border-radius: 3px; padding: 0 2px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .header-nav { display: none; }
+    .inst-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .inst-icon { width: 56px; height: 56px; font-size: 1.6rem; }
+  }
+  @media (max-width: 600px) {
+    .header-inner { padding: 0 1rem; }
+    .header-search { max-width: 200px; }
+    .main-wrap { padding: 1.5rem 1rem; }
+    .hero { padding: 2.5rem 1rem 2rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="header-brand">
+      <div class="brand-icon" style="background:white;padding:3px;overflow:hidden;"><img src="data:image/jpeg;base64,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" alt="UNANDES" style="width:100%;height:100%;object-fit:contain;border-radius:7px;"></div>
+      <div class="brand-text">
+        <div class="brand-title">Maletín Docente</div>
+        <div class="brand-sub">UNANDES · Portal de Herramientas</div>
+      </div>
+    </a>
+    <div class="header-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Buscar herramienta…" autocomplete="off">
+    </div>
+    <nav class="header-nav">
+      <a href="#ecosistema">Institucional</a>
+      <a href="#pizarras">Pizarras</a>
+      <a href="#colaboracion">Colaboración</a>
+      <a href="#investigacion">Investigación</a>
+      <a href="#evaluacion">Evaluación</a>
+      <a href="#materiales">Materiales</a>
+      <a href="#rubricas">Rúbricas</a>
+      <a href="#ia">IA</a>
+      <a href="#similitud">Similitud</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════ CATEGORY FILTER BAR ══════════════ -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all">🗂 Todas</button>
+    <button class="filter-btn" data-filter="ecosistema">🏛 Institucional</button>
+    <button class="filter-btn" data-filter="pizarras">🖊 Pizarras</button>
+    <button class="filter-btn" data-filter="colaboracion">🤝 Colaboración</button>
+    <button class="filter-btn" data-filter="investigacion">🔬 Investigación</button>
+    <button class="filter-btn" data-filter="evaluacion">📊 Evaluación</button>
+    <button class="filter-btn" data-filter="materiales">🎨 Materiales</button>
+    <button class="filter-btn" data-filter="rubricas">📋 Rúbricas</button>
+    <button class="filter-btn" data-filter="ia">🤖 IA</button>
+    <button class="filter-btn" data-filter="similitud">🛡 Similitud</button>
+  </div>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">✦ Portal Docente Oficial · UNANDES 2025</div>
+    <h1>Tu <span>Maletín Digital</span><br>para la Excelencia Docente</h1>
+    <p>Un ecosistema centralizado de herramientas pedagógicas, tecnológicas y de investigación, diseñado para potenciar la calidad de la enseñanza universitaria en la Universidad de los Andes.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Herramientas curadas</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Categorías temáticas</div></div>
+      <div class="stat"><div class="stat-num">60%</div><div class="stat-label">Gratuitas o con licencia educativa</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MAIN CONTENT ══════════════ -->
+<main class="main-wrap" id="main">
+
+  <!-- ─────── 1. ECOSISTEMA INSTITUCIONAL ─────── -->
+  <section class="section" id="ecosistema" data-category="ecosistema">
+    <div class="section-header">
+      <div class="section-icon navy">🏛</div>
+      <div class="section-meta">
+        <h2>Ecosistema Institucional UNANDES</h2>
+        <p>Plataformas oficiales y complementarias que sostienen la actividad académica sincrónica y asincrónica en la universidad.</p>
+      </div>
+    </div>
+
+    <!-- CAMPUS VIRTUAL — Tarjeta destacada -->
+    <div class="institutional-card">
+      <div class="inst-inner">
+        <div class="inst-icon">🎓</div>
+        <div class="inst-text">
+          <h3>Campus Virtual UNANDES</h3>
+          <p>La plataforma institucional principal basada en <strong>Moodle</strong>. Es el repositorio oficial de todas las evidencias académicas y el canal central para la gestión de cursos, evaluaciones y seguimiento del aprendizaje estudiantil.</p>
+          <div class="inst-functions">
+            <span class="inst-tag">📁 Gestión de cursos</span>
+            <span class="inst-tag">✅ Consolidación de evidencias</span>
+            <span class="inst-tag">📝 Recepción de tareas</span>
+            <span class="inst-tag">📊 Evaluaciones en línea</span>
+            <span class="inst-tag">📈 Seguimiento del aprendizaje</span>
+            <span class="inst-tag">💬 Foros y comunicación</span>
+          </div>
+          <a href="https://campusvirtuallpz.udelosandes.com/login/index.php" target="_blank" class="inst-link">🔐 Acceder al Campus Virtual</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <!-- Zoom -->
+      <div class="tool-card institutional" data-name="zoom videoconferencia reuniones grabación" data-category="ecosistema">
+        <div class="card-top">
+          <div class="tool-logo">🎥</div>
+          <div class="tool-head">
+            <div class="tool-name">Zoom</div>
+            <div class="tool-badges">
+              <span class="badge institutional">Oficial UNANDES</span>
+              <span class="badge freemium">Freemium</span>
+              <span class="badge level-basic">Básico</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="tool-desc">Plataforma oficial de videoconferencia institucional de UNANDES. Ideal para videoclases sincrónicas con funciones avanzadas de colaboración, grabación y gestión de grupos.</p>
+          <div class="tool-functions">
+            <div class="tool-functions-title">Funciones principales</div>
+            <ul>
+              <li>Videoclases sincrónicas con hasta 300 participantes</li>
+              <li>Grabación de sesiones en la nube</li>
+              <li>Salas de trabajo colaborativo (Breakout Rooms)</li>
+              <li>Compartir pantalla y pizarra digital</li>
+              <li>Encuestas y levantamiento de mano</li>
+            </ul>
+          </div>
+          <div class="tool-rec"><strong>💡 Recomendación UNANDES</strong>Utilizar como plataforma primaria para todas las sesiones sincrónicas institucionales. Programar clases desde el Campus Virtual para integración automática.</div>
+        </div>
+        <div class="card-footer">
+          <span class="official-badge">⭐ Plataforma oficial</span>
+          <a href="https://zoom.us/" target="_blank" class="tool-link gold-btn">Ir a Zoom ↗</a>
+        </div>
+      </div>
+
+      <!-- Google Meet -->
+      <div class="tool-card" data-name="google meet reuniones rápidas subtítulos workspace" data-category="ecosistema">
+        <div class="card-top">
+          <div class="tool-logo">📹</div>
+          <div class="tool-head">
+            <div class="tool-name">Google Meet</div>
+            <div class="tool-badges">
+              <span class="badge freemium">Freemium</span>
+              <span class="badge level-basic">Básico</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="tool-desc">Alternativa complementaria para videollamadas rápidas integrada con Google Workspace. Accesible desde cualquier cuenta Google, sin descarga adicional.</p>
+          <div class="tool-functions">
+            <div class="tool-functions-title">Funciones principales</div>
+            <ul>
+              <li>Reuniones rápidas desde el navegador</li>
+              <li>Integración nativa con Google Workspace</li>
+              <li>Subtítulos automáticos en tiempo real</li>
+              <li>Fondos virtuales y efectos de video</li>
+            </ul>
+          </div>
+          <div class="tool-rec"><strong>💡 Uso recomendado</strong>Ideal para tutorías individuales, reuniones de grupos de trabajo estudiantil o cuando se requiera acceso rápido sin configuración previa.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge freemium">Complementaria</span>
+          <a href="https://meet.google.com/" target="_blank" class="tool-link">Abrir Meet ↗</a>
+        </div>
+      </div>
+
+      <!-- Jitsi Meet -->
+      <div class="tool-card" data-name="jitsi meet gratuita sin cuenta videollamada privacidad" data-category="ecosistema">
+        <div class="card-top">
+          <div class="tool-logo">🔓</div>
+          <div class="tool-head">
+            <div class="tool-name">Jitsi Meet</div>
+            <div class="tool-badges">
+              <span class="badge free">Gratuita</span>
+              <span class="badge level-basic">Básico</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="tool-desc">Solución de videoconferencia 100% gratuita y de código abierto. No requiere instalación ni creación de cuenta. Alta privacidad al ser open source.</p>
+          <div class="tool-functions">
+            <div class="tool-functions-title">Funciones principales</div>
+            <ul>
+              <li>Videollamadas gratuitas ilimitadas</li>
+              <li>Sin necesidad de instalación ni registro</li>
+              <li>Compartir pantalla y chat integrado</li>
+              <li>Cifrado de extremo a extremo</li>
+            </ul>
+          </div>
+          <div class="tool-rec"><strong>💡 Uso recomendado</strong>Opción de contingencia ante problemas técnicos con otras plataformas. Especialmente útil cuando estudiantes tienen limitaciones de acceso a herramientas comerciales.</div>
+        </div>
+        <div class="card-footer">
+          <span class="official-badge">🆓 Sin costo</span>
+          <a href="https://meet.jit.si/" target="_blank" class="tool-link">Abrir Jitsi ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 2. PIZARRAS DIGITALES ─────── -->
+  <section class="section" id="pizarras" data-category="pizarras">
+    <div class="section-header">
+      <div class="section-icon gold">🖊</div>
+      <div class="section-meta">
+        <h2>Pizarras Digitales Colaborativas</h2>
+        <p>Espacios visuales interactivos para lluvia de ideas, mapas conceptuales, resolución de casos y trabajo colaborativo en tiempo real.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+
+      <div class="tool-card" data-name="miro pizarra mapas conceptuales lluvia ideas colaborativo" data-category="pizarras">
+        <div class="card-top">
+          <div class="tool-logo">🟡</div>
+          <div class="tool-head">
+            <div class="tool-name">Miro</div>
+            <div class="tool-badges">
+              <span class="badge freemium">Freemium</span>
+              <span class="badge level-mid">Intermedio</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="tool-desc">Pizarra digital colaborativa líder en el mercado. Ofrece plantillas pedagógicas listas para usar, ideal para sesiones de pensamiento visual y co-creación grupal.</p>
+          <div class="tool-functions">
+            <div class="tool-functions-title">Aplicaciones docentes</div>
+            <ul>
+              <li>Lluvia de ideas con post-its digitales</li>
+              <li>Mapas conceptuales y mentales</li>
+              <li>Resolución colaborativa de casos</li>
+              <li>Tableros Kanban para proyectos</li>
+              <li>Plantillas para Design Thinking</li>
+            </ul>
+          </div>
+          <div class="tool-rec"><strong>💡 Recomendación pedagógica</strong>Combinar con Zoom para sesiones sincrónicas de aprendizaje activo. El plan educativo ofrece acceso ampliado gratuito.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge freemium">Plan Edu disponible</span>
+          <a href="https://miro.com/" target="_blank" class="tool-link">Explorar Miro ↗</a>
+        </div>
+      </div>
+
+      <div class="tool-card" data-name="mural pizarra digital diseño colaborativo plantillas" data-category="pizarras">
+        <div class="card-top">
+          <div class="tool-logo">🎨</div>
+          <div class="tool-head">
+            <div class="tool-name">MURAL</div>
+            <div class="tool-badges">
+              <span class="badge freemium">Freemium</span>
+              <span class="badge level-mid">Intermedio</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="tool-desc">Espacio de trabajo visual colaborativo con énfasis en metodologías ágiles y Design Thinking. Excelente para facilitar dinámicas de co-creación estructuradas.</p>
+          <div class="tool-functions">
+            <div class="tool-functions-title">Aplicaciones docentes</div>
+            <ul>
+              <li>Dinámicas de Design Thinking</li>
+              <li>Mapas de empatía y Canvas</li>
+              <li>Votación y priorización en equipo</li>
+              <li>Facilitar retrospectivas y debates</li>
+            </ul>
+          </div>
+          <div class="tool-rec"><strong>💡 Recomendación pedagógica</strong>Ideal para ABP (Aprendizaje Basado en Proyectos). Cuenta con plan gratuito para educación con funciones extendidas.</div>
+        </div>
+        <div class="card-footer">
+          <span class="badge edu">Plan educativo</span>
+          <a href="https://www.mural.co/" target="_blank" class="tool-link">Explorar MURAL ↗</a>
+        </div>
+      </div>
+
+      <div class="tool-card" data-name="microsoft whiteboard pizarra office365 integración" data-category="pizarras">
+        <div class="card-top">
+          <div class="tool-logo">⬜</div>
+          <div class="tool-head">
+            <div class="tool-name">Microsoft Whiteboard</div>
+            <div class="tool-badges">
+              <span class="badge free">Gratuita</span>
+              <span class="badge level-basic">Básico</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="tool-desc">Pizarra digital integrada en el ecosistema Microsoft 365. Acceso gratuito para instituciones con licencia Microsoft. Integración nativa con Teams.</p>
+          <div class="tool-functions">
+            <div class="tool-functions-title">Aplicaciones docentes</div>
+            <ul>
+              <li>Anotaciones durante videollamadas Teams</li>
+              <li>Diagramas y esquemas conceptuales</li>
+              <li>Resolución colaborativa de problemas</li>
+              <li>Soporte para lápiz digital y táctil</li>
+            </ul>
+          </div>
+          <div class="tool-rec"><strong>💡 Recomendación pedagógica</strong>Si la institución cuenta con licencia Microsoft 365, esta es la opción más integrada para uso cotidiano en clases.</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://www.microsoft.com/microsoft-365/microsoft-whiteboard" target="_blank" class="tool-link">Ir a Whiteboard ↗</a>
+        </div>
+      </div>
+
+      <div class="tool-card" data-name="explain everything pizarra video explicación grabación" data-category="pizarras">
+        <div class="card-top">
+          <div class="tool-logo">📽</div>
+          <div class="tool-head">
+            <div class="tool-name">Explain Everything</div>
+            <div class="tool-badges">
+              <span class="badge freemium">Freemium</span>
+              <span class="badge level-mid">Intermedio</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="tool-desc">Pizarra interactiva con capacidad de grabación de video. Permite crear screencasts explicativos, combinando anotaciones, voz y presentaciones en un solo recurso.</p>
+          <div class="tool-functions">
+            <div class="tool-functions-title">Aplicaciones docentes</div>
+            <ul>
+              <li>Creación de video-tutoriales explicativos</li>
+              <li>Flipped classroom con lecciones grabadas</li>
+              <li>Feedback visual y personalizado</li>
+              <li>Colaboración en tiempo real</li>
+            </ul>
+          </div>
+          <div class="tool-rec"><strong>💡 Recomendación pedagógica</strong>Muy valorada para metodología de aula invertida. Permite a estudiantes crear sus propias explicaciones como actividad evaluativa.</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://explaineverything.com/" target="_blank" class="tool-link">Ver Explain Everything ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 3. TRABAJO COLABORATIVO ─────── -->
+  <section class="section" id="colaboracion" data-category="colaboracion">
+    <div class="section-header">
+      <div class="section-icon emerald">🤝</div>
+      <div class="section-meta">
+        <h2>Herramientas para Trabajo Colaborativo</h2>
+        <p>Plataformas que facilitan el aprendizaje basado en proyectos, la gestión de equipos y la co-creación de contenidos académicos.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="tool-card" data-name="padlet mural digital notas colaboración estudiantes" data-category="colaboracion">
+        <div class="card-top"><div class="tool-logo">📌</div><div class="tool-head"><div class="tool-name">Padlet</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Muro digital colaborativo intuitivo. Permite crear tableros temáticos donde estudiantes comparten ideas, recursos, evidencias y reflexiones de forma visual.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Portafolios digitales estudiantiles</li><li>Muros de reflexión y aprendizaje</li><li>Recolección de recursos compartidos</li><li>Tableros de noticias de curso</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Ideal para actividades de cierre de clase o portafolios de evidencias complementarios al Campus Virtual.</div>
+        </div>
+        <div class="card-footer"><a href="https://padlet.com/" target="_blank" class="tool-link">Ir a Padlet ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="figjam figma pizarra colaborativa diseño" data-category="colaboracion">
+        <div class="card-top"><div class="tool-logo">🖌</div><div class="tool-head"><div class="tool-name">FigJam</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Pizarra colaborativa de Figma. Alternativa moderna a Jamboard (descontinuado). Perfecta para ideación, mapas mentales y talleres colaborativos con interfaz muy intuitiva.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Reemplazo directo de Google Jamboard</li><li>Lluvia de ideas estructurada</li><li>Diagramas de flujo y procesos</li><li>Votación y priorizaciones grupales</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Recomendado como alternativa a Jamboard. Plan gratuito muy completo para uso educativo.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.figma.com/figjam/" target="_blank" class="tool-link">Explorar FigJam ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="trello gestión proyectos kanban tareas equipos" data-category="colaboracion">
+        <div class="card-top"><div class="tool-logo">📋</div><div class="tool-head"><div class="tool-name">Trello</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Gestión visual de proyectos con tableros Kanban. Excelente para que los equipos de estudiantes organicen y hagan seguimiento de sus proyectos académicos.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Gestión de proyectos grupales ABP</li><li>Seguimiento de tareas y plazos</li><li>Organización de investigaciones</li><li>Planificación de presentaciones</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Ideal para ABP. El docente puede supervisar el avance de cada equipo en tiempo real sin reuniones adicionales.</div>
+        </div>
+        <div class="card-footer"><a href="https://trello.com/" target="_blank" class="tool-link">Ir a Trello ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="notion notas documentos base conocimiento organización" data-category="colaboracion">
+        <div class="card-top"><div class="tool-logo">📓</div><div class="tool-head"><div class="tool-name">Notion</div><div class="tool-badges"><span class="badge free">Gratis (Edu)</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Espacio de trabajo todo-en-uno para notas, documentos, bases de datos y wikis. Gratuito para estudiantes y educadores con correo institucional.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Wikis de curso colaborativos</li><li>Bases de conocimiento de asignaturas</li><li>Co-redacción de documentos</li><li>Registro de investigaciones grupales</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Útil para crear espacios de documentación de proyectos. Verificar acceso gratuito con correo educativo UNANDES.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.notion.so/" target="_blank" class="tool-link">Ir a Notion ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="google workspace docs sheets drive colaboración" data-category="colaboracion">
+        <div class="card-top"><div class="tool-logo">🔵</div><div class="tool-head"><div class="tool-name">Google Workspace</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Conjunto de herramientas de productividad y colaboración (Docs, Sheets, Slides, Drive, Forms). Estándar en educación superior por su accesibilidad y colaboración en tiempo real.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Co-edición de documentos académicos</li><li>Formularios de evaluación y encuestas</li><li>Hojas de cálculo colaborativas</li><li>Almacenamiento y distribución de materiales</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Integrar con el Campus Virtual como repositorio complementario de materiales de trabajo colaborativo.</div>
+        </div>
+        <div class="card-footer"><a href="https://workspace.google.com/" target="_blank" class="tool-link">Google Workspace ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 4. INVESTIGACIÓN ACADÉMICA ─────── -->
+  <section class="section" id="investigacion" data-category="investigacion">
+    <div class="section-header">
+      <div class="section-icon purple">🔬</div>
+      <div class="section-meta">
+        <h2>Herramientas para Investigación Académica</h2>
+        <p>Gestión bibliográfica, descubrimiento de literatura científica, análisis de citas y organización de referencias para docentes e investigadores.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="tool-card" data-name="google scholar búsqueda artículos académicos citas" data-category="investigacion">
+        <div class="card-top"><div class="tool-logo">🎓</div><div class="tool-head"><div class="tool-name">Google Scholar</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Motor de búsqueda académica de Google. Punto de partida esencial para localizar literatura científica, verificar citas y encontrar versiones abiertas de publicaciones.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Búsqueda de artículos, tesis y libros académicos</li><li>Conteo y seguimiento de citas</li><li>Alertas de nuevas publicaciones</li><li>Perfil de autor con métricas h-index</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Enseñar a estudiantes búsqueda avanzada con operadores booleanos para mejorar la calidad de sus revisiones bibliográficas.</div>
+        </div>
+        <div class="card-footer"><a href="https://scholar.google.com/" target="_blank" class="tool-link">Abrir Scholar ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="connected papers red visual artículos relacionados" data-category="investigacion">
+        <div class="card-top"><div class="tool-logo">🕸</div><div class="tool-head"><div class="tool-name">Connected Papers</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Herramienta visual que genera grafos de papers relacionados. Permite descubrir el corpus de investigación alrededor de un artículo seminal de forma intuitiva.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Grafos visuales de papers relacionados</li><li>Identificación de artículos influyentes</li><li>Descubrimiento de literatura adyacente</li><li>Análisis de redes de citación</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Excelente para que estudiantes de posgrado mapeen el estado del arte de su campo de investigación de manera visual.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.connectedpapers.com/" target="_blank" class="tool-link">Explorar ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="researchrabbit gestión bibliografía descubrimiento papers" data-category="investigacion">
+        <div class="card-top"><div class="tool-logo">🐇</div><div class="tool-head"><div class="tool-name">ResearchRabbit</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">"El Spotify de los papers". Plataforma de descubrimiento literario académico que aprende tus preferencias de investigación y recomienda artículos relevantes automáticamente.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Recomendaciones personalizadas de papers</li><li>Mapas de literatura visual e interactivo</li><li>Integración con Zotero</li><li>Alertas de nuevas publicaciones relevantes</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Completamente gratuita. Integrar con Zotero para un flujo de trabajo de investigación muy eficiente.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.researchrabbit.ai/" target="_blank" class="tool-link">Ver ResearchRabbit ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="semantic scholar IA análisis papers gratuito" data-category="investigacion">
+        <div class="card-top"><div class="tool-logo">🧠</div><div class="tool-head"><div class="tool-name">Semantic Scholar</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Motor de búsqueda científica potenciado por IA del Instituto Allen. Extrae datos clave de artículos, identifica metodologías y resultados sin leer el paper completo.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Resúmenes automáticos con IA (TLDR)</li><li>Análisis de influencia de publicaciones</li><li>Identificación de datasets y métodos</li><li>Más de 200M de artículos indexados</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Muy útil para revisiones bibliográficas rápidas. Combinar con Zotero para guardar y organizar los hallazgos.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.semanticscholar.org/" target="_blank" class="tool-link">Ir a Semantic Scholar ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="zotero gestión referencias bibliografía citas APA" data-category="investigacion">
+        <div class="card-top"><div class="tool-logo">📚</div><div class="tool-head"><div class="tool-name">Zotero</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Gestor de referencias bibliográficas de código abierto y gratuito. Estándar en investigación académica para organizar, citar y gestionar bibliografía en múltiples estilos.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Captura automática de referencias web</li><li>Generación de citas APA, APA 7, MLA, Chicago</li><li>Sincronización entre dispositivos</li><li>Grupos colaborativos de investigación</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Herramienta esencial. Enseñar su uso en metodología de investigación para que los estudiantes adopten buenas prácticas bibliográficas desde el inicio.</div>
+        </div>
+        <div class="card-footer"><span class="official-badge">🏆 Muy recomendada</span><a href="https://www.zotero.org/" target="_blank" class="tool-link">Descargar Zotero ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="mendeley referencias documentos PDF lector" data-category="investigacion">
+        <div class="card-top"><div class="tool-logo">📕</div><div class="tool-head"><div class="tool-name">Mendeley</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Gestor de referencias de Elsevier con lector de PDF integrado. Permite anotar documentos, colaborar en grupos y generar bibliografías automáticamente.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Lector y anotador de PDFs integrado</li><li>Importación automática de metadatos</li><li>Plugin para Word y LibreOffice</li><li>Grupos de investigación colaborativa</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Alternativa a Zotero con interfaz muy intuitiva. Ideal para estudiantes que trabajan principalmente con PDFs.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.mendeley.com/" target="_blank" class="tool-link">Ir a Mendeley ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="scite citas contexto confiabilidad verificación" data-category="investigacion">
+        <div class="card-top"><div class="tool-logo">🔍</div><div class="tool-head"><div class="tool-name">Scite.ai</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-adv">Avanzado</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Plataforma que analiza el contexto de las citas para determinar si un artículo es respaldado, contradecido o simplemente mencionado por otros trabajos.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Análisis contextual de citas (apoya/contradice)</li><li>Verificación de fiabilidad de publicaciones</li><li>Dashboard de métricas de investigación</li><li>Integración con gestores de referencias</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Muy valiosa para evaluar la solidez de la evidencia científica. Ideal para cursos de metodología de investigación avanzada.</div>
+        </div>
+        <div class="card-footer"><a href="https://scite.ai/" target="_blank" class="tool-link">Ver Scite.ai ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 5. EVALUACIÓN DEL APRENDIZAJE ─────── -->
+  <section class="section" id="evaluacion" data-category="evaluacion">
+    <div class="section-header">
+      <div class="section-icon rose">📊</div>
+      <div class="section-meta">
+        <h2>Herramientas para Evaluación del Aprendizaje</h2>
+        <p>Plataformas para evaluación diagnóstica, formativa y sumativa con gamificación, retroalimentación inmediata y análisis de resultados.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="tool-card" data-name="kahoot gamificación cuestionarios evaluación interactiva" data-category="evaluacion">
+        <div class="card-top"><div class="tool-logo">🎮</div><div class="tool-head"><div class="tool-name">Kahoot!</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Plataforma de gamificación educativa con cuestionarios competitivos. Aumenta la participación y el compromiso estudiantil mediante dinámicas lúdicas de evaluación formativa.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Evaluaciones diagnósticas gamificadas</li><li>Retroalimentación visual inmediata</li><li>Reportes de resultados por pregunta</li><li>Asignaciones en modo asincrónico</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Usar al inicio o cierre de clase para activar conocimientos previos o reforzar aprendizajes. No reemplaza evaluaciones formales del Campus Virtual.</div>
+        </div>
+        <div class="card-footer"><a href="https://kahoot.com/" target="_blank" class="tool-link">Ir a Kahoot! ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="wayground quizizz cuestionarios asincrónico autoevaluación" data-category="evaluacion">
+        <div class="card-top"><div class="tool-logo">⚡</div><div class="tool-head"><div class="tool-name">Wayground</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Anteriormente conocido como Quizizz, Wayground es una plataforma de aprendizaje adaptativo con mayor énfasis en el trabajo asincrónico. Los estudiantes avanzan a su propio ritmo, con retroalimentación personalizada al instante.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Cuestionarios adaptativos con IA</li><li>Lecciones interactivas multimedia</li><li>Modo asincrónico para tareas</li><li>Banco de preguntas compartido</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Ideal para asignaciones de repaso autónomo entre sesiones. Compatible con LMS mediante LTI.</div>
+        </div>
+        <div class="card-footer"><a href="https://wayground.com/" target="_blank" class="tool-link">Ir a Wayground ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="socrative evaluación respuestas en clase retroalimentación" data-category="evaluacion">
+        <div class="card-top"><div class="tool-logo">🚀</div><div class="tool-head"><div class="tool-name">Socrative</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Sistema de respuesta de audiencia para evaluación formativa en tiempo real. Simple, efectivo y diseñado específicamente para entornos educativos universitarios.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Preguntas en tiempo real durante la clase</li><li>Space Race: actividad grupal competitiva</li><li>Salida de clase (Exit Ticket)</li><li>Exportación de resultados a Excel</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>El "Exit Ticket" es una excelente técnica formativa para verificar comprensión al final de cada sesión.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.socrative.com/" target="_blank" class="tool-link">Ir a Socrative ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="mentimeter presentaciones interactivas nube palabras encuestas" data-category="evaluacion">
+        <div class="card-top"><div class="tool-logo">💬</div><div class="tool-head"><div class="tool-name">Mentimeter</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Plataforma de presentaciones interactivas con votaciones, nubes de palabras y preguntas en vivo. Transforma clases magistrales en experiencias participativas.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Nubes de palabras en tiempo real</li><li>Encuestas y votaciones instantáneas</li><li>Preguntas abiertas visualizadas en vivo</li><li>Escalas de opinión y ranking</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Poderoso para activar participación en grupos grandes. Usar al inicio de clase para diagnóstico rápido de conocimientos previos.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.mentimeter.com/" target="_blank" class="tool-link">Ir a Mentimeter ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="google forms formularios evaluación encuestas gratuito" data-category="evaluacion">
+        <div class="card-top"><div class="tool-logo">📝</div><div class="tool-head"><div class="tool-name">Google Forms</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Creador de formularios y cuestionarios gratuito de Google con análisis automático de respuestas. Ideal para evaluaciones rápidas y recolección de datos.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Cuestionarios autocalificables</li><li>Análisis automático de respuestas con gráficos</li><li>Integración con Google Sheets</li><li>Ramificación condicional de preguntas</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Herramienta versátil y accesible. Usar para evaluaciones diagnósticas, encuestas de satisfacción y autoevaluaciones estudiantiles.</div>
+        </div>
+        <div class="card-footer"><a href="https://forms.google.com/" target="_blank" class="tool-link">Ir a Google Forms ↗</a></div>
+      </div>
+
+      <div class="tool-card institutional" data-name="moodle quiz cuestionarios evaluación campus virtual" data-category="evaluacion">
+        <div class="card-top"><div class="tool-logo">🎓</div><div class="tool-head"><div class="tool-name">Moodle Quiz (Campus Virtual)</div><div class="tool-badges"><span class="badge institutional">Oficial UNANDES</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Módulo de evaluaciones integrado en el Campus Virtual UNANDES. Permite crear evaluaciones formales con múltiples tipos de preguntas, control de tiempo y registro oficial de calificaciones.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Banco de preguntas reutilizable</li><li>Control de intentos y temporización</li><li>Retroalimentación personalizada por respuesta</li><li>Calificaciones integradas al libro de notas</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación UNANDES</strong>Para evaluaciones formativas y sumativas que requieran registro oficial, siempre utilizar Moodle Quiz como herramienta principal.</div>
+        </div>
+        <div class="card-footer"><span class="official-badge">⭐ Plataforma oficial</span><a href="https://campusvirtuallpz.udelosandes.com/login/index.php" target="_blank" class="tool-link gold-btn">Campus Virtual ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 6. CREACIÓN DE MATERIAL EDUCATIVO ─────── -->
+  <section class="section" id="materiales" data-category="materiales">
+    <div class="section-header">
+      <div class="section-icon sky">🎨</div>
+      <div class="section-meta">
+        <h2>Creación de Material Educativo</h2>
+        <p>Herramientas para diseñar presentaciones interactivas, videos educativos, recursos multimedia y objetos virtuales de aprendizaje.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="tool-card" data-name="canva diseño presentaciones infografías visual educación" data-category="materiales">
+        <div class="card-top"><div class="tool-logo">🎨</div><div class="tool-head"><div class="tool-name">Canva for Education</div><div class="tool-badges"><span class="badge free">Gratis (Edu)</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Plataforma de diseño gráfico con plan gratuito para educadores. Miles de plantillas para presentaciones, infografías, pósters y material didáctico visualmente atractivo.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Presentaciones animadas para clases</li><li>Infografías y materiales de apoyo visual</li><li>Plantillas para portafolios estudiantiles</li><li>Aulas virtuales de Canva con asignaciones</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Solicitar acceso gratuito con correo institucional. Plan for Education desbloquea funciones premium y permite gestionar aulas.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.canva.com/education/" target="_blank" class="tool-link">Ir a Canva Edu ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="genially presentaciones interactivas animadas gamificación" data-category="materiales">
+        <div class="card-top"><div class="tool-logo">✨</div><div class="tool-head"><div class="tool-name">Genially</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Plataforma para crear contenidos interactivos y animados. Permite diseñar presentaciones, infografías, juegos educativos y escape rooms digitales con gran impacto visual.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Presentaciones interactivas con elementos clicables</li><li>Gamificación con Escape Rooms educativos</li><li>Infografías animadas e interactivas</li><li>Objetos virtuales de aprendizaje</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Excelente para crear OVAs (Objetos Virtuales de Aprendizaje) atractivos. Los estudiantes pueden acceder sin necesidad de crear cuenta.</div>
+        </div>
+        <div class="card-footer"><a href="https://genially.com/" target="_blank" class="tool-link">Ir a Genially ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="H5P contenido interactivo moodle integración quiz" data-category="materiales">
+        <div class="card-top"><div class="tool-logo">🔧</div><div class="tool-head"><div class="tool-name">H5P</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Plataforma open source para crear contenidos HTML5 interactivos. Integración nativa con Moodle para enriquecer el Campus Virtual con materiales interactivos avanzados.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Videos interactivos con preguntas incrustadas</li><li>Líneas de tiempo interactivas</li><li>Presentaciones con Quiz integrado</li><li>Flashcards y juegos de memoria</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Integrar directamente en el Campus Virtual UNANDES (Moodle). Permite crear recursos didácticos muy ricos sin conocimientos de programación.</div>
+        </div>
+        <div class="card-footer"><span class="official-badge">🔗 Integra con Moodle</span><a href="https://h5p.org/" target="_blank" class="tool-link">Ver H5P ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="powtoon video animado presentaciones explainer" data-category="materiales">
+        <div class="card-top"><div class="tool-logo">🎬</div><div class="tool-head"><div class="tool-name">Powtoon</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Plataforma para crear videos animados y presentaciones de estilo explainer. Ideal para materiales introductorios, cápsulas de contenido y presentaciones estudiantiles.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Videos animados explicativos (Explainer Videos)</li><li>Cápsulas de contenido para flipped classroom</li><li>Presentaciones dinámicas y atractivas</li><li>Proyectos de video estudiantiles</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Considerar como actividad evaluativa donde estudiantes crean videos explicando conceptos, desarrollando competencias comunicativas digitales.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.powtoon.com/" target="_blank" class="tool-link">Ir a Powtoon ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="loom video grabación pantalla asincrónico retroalimentación" data-category="materiales">
+        <div class="card-top"><div class="tool-logo">📹</div><div class="tool-head"><div class="tool-name">Loom</div><div class="tool-badges"><span class="badge free">Gratis (Edu)</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Grabador de video y pantalla asincrónico. Revoluciona la retroalimentación docente con videos comentados, y permite crear cápsulas de clase en minutos.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Retroalimentación en video a trabajos estudiantiles</li><li>Cápsulas de contenido rápidas (5-10 min)</li><li>Tutoriales de software paso a paso</li><li>Grabación de lecciones para aula invertida</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Completamente gratuito para educadores. La retroalimentación en video es 5x más efectiva que la escrita según estudios de aprendizaje.</div>
+        </div>
+        <div class="card-footer"><span class="official-badge">🎁 Gratis para docentes</span><a href="https://www.loom.com/" target="_blank" class="tool-link">Ir a Loom ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="adobe express diseño gráfico visual contenido" data-category="materiales">
+        <div class="card-top"><div class="tool-logo">🅰</div><div class="tool-head"><div class="tool-name">Adobe Express</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Suite de diseño simplificada de Adobe. Crear gráficos, páginas web rápidas, videos cortos y PDFs de calidad profesional con la potencia de las herramientas Adobe, simplificada.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Aplicaciones docentes</div><ul><li>Diseño de materiales visuales de alta calidad</li><li>Páginas web de unidades temáticas</li><li>Videos cortos para redes y aula</li><li>Plantillas de Adobe adaptables</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Verificar si UNANDES tiene convenio con Adobe para acceso gratuito o con descuento para toda la comunidad educativa.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.adobe.com/express/" target="_blank" class="tool-link">Ver Adobe Express ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 7. RÚBRICAS ─────── -->
+  <section class="section" id="rubricas" data-category="rubricas">
+    <div class="section-header">
+      <div class="section-icon amber">📋</div>
+      <div class="section-meta">
+        <h2>Elaboración de Rúbricas y Evaluación por Competencias</h2>
+        <p>Herramientas para construir rúbricas analíticas, evaluar por competencias y garantizar transparencia en los criterios de evaluación.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="tool-card" data-name="quick rubric rúbricas evaluación criterios rápido" data-category="rubricas">
+        <div class="card-top"><div class="tool-logo">⚡</div><div class="tool-head"><div class="tool-name">Quick Rubric</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Herramienta web minimalista para crear rúbricas analíticas en minutos. Interfaz intuitiva de grilla editable que permite construir criterios, niveles y descriptores rápidamente.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Creación de rúbricas analíticas en tabla</li><li>Impresión y exportación a PDF</li><li>Biblioteca de rúbricas públicas por área</li><li>Compartir enlace con estudiantes</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Ideal para docentes que inician en la construcción de rúbricas. Usar como borrador para luego importar a Moodle Advanced Grading.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.quickrubric.com/" target="_blank" class="tool-link">Ir a Quick Rubric ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="rubistar rúbricas plantillas evaluación docente" data-category="rubricas">
+        <div class="card-top"><div class="tool-logo">⭐</div><div class="tool-head"><div class="tool-name">RubiStar</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Generador de rúbricas con plantillas prediseñadas por áreas temáticas. Permite personalizar descriptores de desempeño a partir de estructuras académicas probadas.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Plantillas de rúbricas por tipo de actividad</li><li>Personalización de criterios y descriptores</li><li>Guardado y gestión de rúbricas propias</li><li>Exportación e impresión</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Útil como punto de partida para docentes nuevos en evaluación por competencias. Adaptar las plantillas al contexto UNANDES.</div>
+        </div>
+        <div class="card-footer"><a href="https://rubistar.4teachers.org/" target="_blank" class="tool-link">Ir a RubiStar ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="corubrics rúbricas google sheets colaborativas autoevaluación" data-category="rubricas">
+        <div class="card-top"><div class="tool-logo">📊</div><div class="tool-head"><div class="tool-name">CoRubrics</div><div class="tool-badges"><span class="badge free">Gratuita</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Complemento de Google Sheets para coevaluación y autoevaluación con rúbricas. Automatiza la recolección de evaluaciones entre pares directamente desde formularios Google.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Coevaluación entre pares automatizada</li><li>Autoevaluación con rúbricas digitales</li><li>Consolidación automática de notas en Sheets</li><li>Envío de retroalimentación personalizada</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Excelente para implementar evaluación entre pares en trabajos grupales. Reduce la carga administrativa de calificación colaborativa significativamente.</div>
+        </div>
+        <div class="card-footer"><a href="https://corubrics-es.tecnocentres.org/" target="_blank" class="tool-link">Ver CoRubrics ↗</a></div>
+      </div>
+
+      <div class="tool-card institutional" data-name="moodle rúbricas advanced grading campus virtual evaluación" data-category="rubricas">
+        <div class="card-top"><div class="tool-logo">🎓</div><div class="tool-head"><div class="tool-name">Moodle Advanced Grading</div><div class="tool-badges"><span class="badge institutional">Oficial UNANDES</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Módulo de calificación avanzada integrado en el Campus Virtual. Permite crear rúbricas analíticas y guías de evaluación directamente vinculadas a las actividades de Moodle.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Rúbricas analíticas integradas en Moodle</li><li>Guías de calificación por criterios</li><li>Retroalimentación individual por criterio</li><li>Calificación directa al libro de notas oficial</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación UNANDES</strong>Para evaluaciones oficiales, siempre utilizar Moodle Advanced Grading para garantizar el registro oficial de calificaciones en el Campus Virtual.</div>
+        </div>
+        <div class="card-footer"><span class="official-badge">⭐ Herramienta oficial</span><a href="https://campusvirtuallpz.udelosandes.com/login/index.php" target="_blank" class="tool-link gold-btn">Campus Virtual ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 8. INTELIGENCIA ARTIFICIAL ─────── -->
+  <section class="section" id="ia" data-category="ia">
+    <div class="section-header">
+      <div class="section-icon teal">🤖</div>
+      <div class="section-meta">
+        <h2>Inteligencia Artificial para la Docencia</h2>
+        <p>Herramientas de IA para planificación didáctica, elaboración de materiales, apoyo a la investigación y síntesis de información científica. Uso ético y supervisado.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="tool-card" data-name="claude IA asistente planificación didáctica materiales investigación" data-category="ia">
+        <div class="card-top"><div class="tool-logo">🟠</div><div class="tool-head"><div class="tool-name">Claude (Anthropic)</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Asistente de IA conversacional de Anthropic con énfasis en razonamiento profundo, análisis de documentos y síntesis de información. Excelente para tareas académicas complejas.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Usos responsables en docencia</div><ul><li>Planificación de syllabus y secuencias didácticas</li><li>Generación de bancos de preguntas evaluativas</li><li>Síntesis y análisis de documentos académicos</li><li>Elaboración de rúbricas y materiales de apoyo</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Destacado por su capacidad de análisis de textos largos. Ideal para síntesis de literatura científica y planificación curricular detallada.</div>
+        </div>
+        <div class="card-footer"><a href="https://claude.ai/" target="_blank" class="tool-link">Ir a Claude ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="chatgpt openai IA asistente materiales evaluación generativo" data-category="ia">
+        <div class="card-top"><div class="tool-logo">🟢</div><div class="tool-head"><div class="tool-name">ChatGPT (OpenAI)</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Modelo de lenguaje de OpenAI, referente mundial de la IA generativa. Versátil para múltiples tareas docentes, desde creación de materiales hasta orientación pedagógica.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Usos responsables en docencia</div><ul><li>Creación de ejercicios y actividades de aprendizaje</li><li>Generación de ejemplos y casos de estudio</li><li>Borradores de materiales educativos</li><li>Simulación de escenarios pedagógicos</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Usar para inspiración y primeros borradores. El docente debe revisar, contextualizar y validar todo el contenido generado antes de utilizarlo.</div>
+        </div>
+        <div class="card-footer"><a href="https://chatgpt.com/" target="_blank" class="tool-link">Ir a ChatGPT ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="gemini google IA multimodal imágenes búsqueda" data-category="ia">
+        <div class="card-top"><div class="tool-logo">🔷</div><div class="tool-head"><div class="tool-name">Gemini (Google)</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">IA multimodal de Google con acceso a información actualizada mediante búsqueda web. Integración nativa con Google Workspace para flujos de trabajo educativos.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Usos responsables en docencia</div><ul><li>Búsqueda aumentada con síntesis de información</li><li>Análisis de imágenes y gráficos académicos</li><li>Integración con Docs, Sheets y Gmail</li><li>Actualización de contenidos con información reciente</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Ventaja competitiva: acceso a información actualizada en tiempo real, a diferencia de otros modelos con fecha de corte de conocimiento fija.</div>
+        </div>
+        <div class="card-footer"><a href="https://gemini.google.com/" target="_blank" class="tool-link">Ir a Gemini ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="perplexity búsqueda IA fuentes citadas respuestas verificadas" data-category="ia">
+        <div class="card-top"><div class="tool-logo">🔮</div><div class="tool-head"><div class="tool-name">Perplexity AI</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Motor de respuestas basado en IA que cita sus fuentes en tiempo real. Combina la inmediatez de la IA con la verificabilidad de las fuentes consultadas.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Usos responsables en docencia</div><ul><li>Investigación con fuentes citadas verificables</li><li>Actualización rápida sobre temas académicos</li><li>Síntesis de información con trazabilidad</li><li>Respuestas con referencias bibliográficas</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Ideal para investigación inicial gracias a las citas de fuentes. Enseñar a estudiantes a verificar siempre las fuentes citadas directamente.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Ir a Perplexity ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="elicit investigación académica extracción papers IA" data-category="ia">
+        <div class="card-top"><div class="tool-logo">🧬</div><div class="tool-head"><div class="tool-name">Elicit</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Asistente de investigación científica basado en IA. Busca y sintetiza papers académicos con extracción automática de metodologías, resultados y limitaciones.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Usos responsables en docencia</div><ul><li>Revisiones de literatura semisistematizadas</li><li>Extracción de datos de múltiples papers</li><li>Síntesis comparativa de hallazgos</li><li>Apoyo a revisiones sistemáticas</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Potente para revisiones de literatura en posgrado. Siempre verificar resultados accediendo a los papers originales.</div>
+        </div>
+        <div class="card-footer"><a href="https://elicit.com/" target="_blank" class="tool-link">Ir a Elicit ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="consensus IA búsqueda consenso científico evidencia" data-category="ia">
+        <div class="card-top"><div class="tool-logo">⚖</div><div class="tool-head"><div class="tool-name">Consensus</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-mid">Intermedio</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Motor de búsqueda científica que identifica el nivel de consenso académico sobre una pregunta específica, analizando la evidencia disponible en la literatura.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Usos responsables en docencia</div><ul><li>Verificación del estado del conocimiento científico</li><li>Identificación de debates académicos actuales</li><li>Apoyo al pensamiento crítico basado en evidencia</li><li>Búsqueda de preguntas de investigación abiertas</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Excelente para discusiones de clase sobre temas controversiales. Mostrar a estudiantes cómo se construye el conocimiento científico por consenso.</div>
+        </div>
+        <div class="card-footer"><a href="https://consensus.app/" target="_blank" class="tool-link">Ir a Consensus ↗</a></div>
+      </div>
+    </div>
+
+    <!-- Ethics Note -->
+    <div class="ethics-note">
+      <span class="ethics-icon">⚖️</span>
+      <div class="ethics-content">
+        <h4>Nota Ética sobre el Uso Responsable de la Inteligencia Artificial</h4>
+        <p>Las herramientas de IA son auxiliares pedagógicos poderosos, pero requieren supervisión docente activa y pensamiento crítico. El docente es responsable de verificar la precisión, relevancia y actualidad de todo contenido generado por IA antes de utilizarlo en contextos académicos. Es fundamental promover en los estudiantes la comprensión de las limitaciones de la IA, evitar el uso que sustituya el aprendizaje genuino, declarar el uso de IA en trabajos académicos según las políticas institucionales de UNANDES, y garantizar la privacidad de datos al no compartir información confidencial de estudiantes con plataformas de IA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 9. DETECCIÓN DE SIMILITUD ─────── -->
+  <section class="section" id="similitud" data-category="similitud">
+    <div class="section-header">
+      <div class="section-icon red">🛡</div>
+      <div class="section-meta">
+        <h2>Detección de Similitud Académica</h2>
+        <p>Herramientas para promover la integridad académica, prevenir el plagio y utilizar formativamente los reportes de similitud en la formación estudiantil.</p>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="tool-card" data-name="turnitin plagio similitud integridad académica detección" data-category="similitud">
+        <div class="card-top"><div class="tool-logo">🔍</div><div class="tool-head"><div class="tool-name">Turnitin</div><div class="tool-badges"><span class="badge paid">De pago</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Estándar mundial en detección de similitud académica. Integrable con Moodle mediante plugin oficial. Genera reportes detallados de similitud con fuentes identificadas y contextualizadas.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Detección de similitud con base de datos global</li><li>Integración directa con Moodle/Campus Virtual</li><li>Reportes de similitud con fuentes referenciadas</li><li>Detección de escritura generada por IA</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Verificar si UNANDES cuenta con licencia institucional. Usar el reporte como herramienta formativa para enseñar citación correcta, no solo punitiva.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.turnitin.com/" target="_blank" class="tool-link">Ver Turnitin ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="plagiarism checker x detección similitud archivos escritorio" data-category="similitud">
+        <div class="card-top"><div class="tool-logo">🖥</div><div class="tool-head"><div class="tool-name">Plagiarism Checker X</div><div class="tool-badges"><span class="badge freemium">Freemium</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Herramienta de escritorio para detección de similitud. Permite analizar documentos localmente, útil cuando se requiere privacidad de los documentos estudiantiles.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Análisis de documentos Word y PDF localmente</li><li>Comparación entre documentos propios</li><li>Reporte de similitud con porcentajes</li><li>Modo offline para mayor privacidad</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Útil como herramienta complementaria para verificaciones rápidas. Para evaluaciones formales, preferir herramientas integradas con el Campus Virtual.</div>
+        </div>
+        <div class="card-footer"><a href="https://plagiarismcheckerx.com/" target="_blank" class="tool-link">Ver PCX ↗</a></div>
+      </div>
+
+      <div class="tool-card" data-name="scribbr plagiarism checker detección gratuita web" data-category="similitud">
+        <div class="card-top"><div class="tool-logo">📄</div><div class="tool-head"><div class="tool-name">Scribbr Plagiarism Checker</div><div class="tool-badges"><span class="badge paid">De pago</span><span class="badge level-basic">Básico</span></div></div></div>
+        <div class="card-body">
+          <p class="tool-desc">Verificador de plagio web de alta precisión basado en tecnología de Turnitin, con interfaz simplificada. Ideal para revisión de trabajos finales y tesis de grado.</p>
+          <div class="tool-functions"><div class="tool-functions-title">Funciones principales</div><ul><li>Verificación de similitud web y académica</li><li>Reporte detallado con fuentes específicas</li><li>Corrector gramatical integrado</li><li>Verificación de citas y referencias APA</li></ul></div>
+          <div class="tool-rec"><strong>💡 Recomendación</strong>Considera que los reportes de similitud deben usarse educativamente. Reunirse con el estudiante para revisar el reporte y enseñar buenas prácticas de citación.</div>
+        </div>
+        <div class="card-footer"><a href="https://www.scribbr.com/plagiarism-checker/" target="_blank" class="tool-link">Ver Scribbr ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── 10. RECOMENDACIONES GENERALES ─────── -->
+  <section class="section" id="recomendaciones">
+    <div class="section-header">
+      <div class="section-icon navy">💡</div>
+      <div class="section-meta">
+        <h2>Recomendaciones Generales para el Docente UNANDES</h2>
+        <p>Guía práctica para la adopción estratégica y ética de tecnologías educativas en la Universidad de los Andes.</p>
+      </div>
+    </div>
+    <div class="recs-grid">
+      <div class="rec-card">
+        <div class="rec-num">1</div>
+        <div class="rec-text"><h4>Campus Virtual como eje central</h4><p>Priorizar el Campus Virtual UNANDES (Moodle) como repositorio oficial de todas las evidencias académicas, calificaciones y materiales del curso.</p></div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">2</div>
+        <div class="rec-text"><h4>Zoom para sesiones institucionales</h4><p>Utilizar Zoom como plataforma principal para videoclases y sesiones sincrónicas, aprovechando sus funciones avanzadas de gestión de grupos.</p></div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">3</div>
+        <div class="rec-text"><h4>Alternativas complementarias</h4><p>Emplear Google Meet o Jitsi Meet como opciones de respaldo cuando se requieran alternativas accesibles o de contingencia.</p></div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">4</div>
+        <div class="rec-text"><h4>Accesibilidad para estudiantes</h4><p>Seleccionar herramientas considerando la conectividad y accesibilidad de todos los estudiantes, priorizando opciones que funcionen bien en conexiones limitadas.</p></div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">5</div>
+        <div class="rec-text"><h4>Priorizar herramientas gratuitas</h4><p>Preferir herramientas gratuitas o con licencias educativas antes de recomendar o exigir a estudiantes el uso de plataformas de pago.</p></div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">6</div>
+        <div class="rec-text"><h4>Protección de datos y ética digital</h4><p>Revisar las políticas de privacidad de cada herramienta antes de utilizarla con datos de estudiantes. Cumplir con la normativa de protección de datos vigente.</p></div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">7</div>
+        <div class="rec-text"><h4>Metodologías activas con tecnología</h4><p>Favorecer el uso de tecnología que potencie metodologías activas (ABP, flipped classroom, gamificación) en lugar de usarla solo para transmitir información.</p></div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">8</div>
+        <div class="rec-text"><h4>Uso ético de la IA</h4><p>Definir con claridad en cada curso las políticas de uso de IA generativa, promoviendo su uso responsable y declarado según las directrices de UNANDES.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="site-footer">
+  <p><strong>Maletín Docente UNANDES</strong> · Universidad de los Andes · Portal de Herramientas Pedagógicas Digitales</p>
+  <p style="margin-top:0.5rem; opacity:0.6; font-size:0.76rem;">Este portal es un recurso de referencia. Los docentes son responsables de verificar la vigencia y políticas de cada herramienta. Actualización recomendada: semestral.</p>
+</footer>
+
+<script>
+  // ── SEARCH ──
+  const searchInput = document.getElementById('searchInput');
+  const allCards = document.querySelectorAll('.tool-card');
+
+  searchInput.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    allCards.forEach(card => {
+      const name = (card.dataset.name || '').toLowerCase();
+      const text = card.innerText.toLowerCase();
+      if (!q || name.includes(q) || text.includes(q)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+
+  // ── CATEGORY FILTER ──
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const allSections = document.querySelectorAll('.section[data-category]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      if (filter === 'all') {
+        allSections.forEach(s => s.style.display = '');
+      } else {
+        allSections.forEach(s => {
+          s.style.display = s.dataset.category === filter ? '' : 'none';
+        });
+      }
+      searchInput.value = '';
+      allCards.forEach(c => c.classList.remove('hidden'));
+    });
+  });
+
+  // ── SMOOTH SCROLL FOR NAV LINKS ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
